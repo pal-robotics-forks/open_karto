@@ -20,6 +20,8 @@ cmake_minimum_required(VERSION 2.8.3)
 
 project(open_karto)
 
+find_package(catkin REQUIRED)
+
 catkin_package(
     LIBRARIES OpenKarto
     INCLUDE_DIRS include
