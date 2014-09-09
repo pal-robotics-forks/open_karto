@@ -5688,7 +5688,7 @@ namespace karto
         kt_double rangeReading = pScan->GetRangeReadings()[pointIndex];
         kt_bool isEndPointValid = rangeReading < (rangeThreshold - KT_TOLERANCE);
 
-        if (rangeReading >= maxRange)
+        if (rangeReading >= maxRange || isnan(rangeReading))
         {
           // ignore max range readings
           pointIndex++;
