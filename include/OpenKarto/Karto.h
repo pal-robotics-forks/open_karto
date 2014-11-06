@@ -5671,7 +5671,6 @@ namespace karto
     virtual kt_bool AddScan(LocalizedRangeScan* pScan, kt_bool doUpdate = false)
     {
       kt_double rangeThreshold = pScan->GetLaserRangeFinder()->GetRangeThreshold();
-      kt_double maxRange = pScan->GetLaserRangeFinder()->GetMaximumRange();
 
       Vector2<kt_double> scanPosition = pScan->GetSensorPose().GetPosition();
 
@@ -5688,13 +5687,7 @@ namespace karto
         kt_double rangeReading = pScan->GetRangeReadings()[pointIndex];
         kt_bool isEndPointValid = rangeReading < (rangeThreshold - KT_TOLERANCE);
 
-        if (rangeReading >= maxRange)
-        {
-          // ignore max range readings
-          pointIndex++;
-          continue;
-        }
-        else if (rangeReading >= rangeThreshold)
+        if (rangeReading >= rangeThreshold)
         {
           // trace up to range reading
           kt_double ratio = rangeThreshold / rangeReading;
