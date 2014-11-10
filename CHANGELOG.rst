@@ -2,8 +2,8 @@
 Changelog for package open_karto
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.1.1 (2014-11-10)
+------------------
 * removes check for readings over max range
 * Add dependency to boost
 * Bump minimum cmake version requirement
